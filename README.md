@@ -1,7 +1,7 @@
 
-## RNA-seq differential expression workshop, July 2022
+## RNA-seq data analysis workshop, June 2023
 
-This workshop will be delivered on June 12-16 (12-5pm each day) by the Genomic Data Sciences Core (GDSC) of the [Center for Quantitative Biology at Dartmouth](https://sites.dartmouth.edu/cqb/).
+This workshop will be delivered on June 12-16 (12-5pm) by the Genomic Data Sciences Core (GDSC) of the [Center for Quantitative Biology at Dartmouth](https://sites.dartmouth.edu/cqb/).
 
 The GDSC aims to facilitate advanced bioinformatic, computational, and statistical analysis of complex genomics data for the Dartmouth research community.
 
