@@ -1,11 +1,11 @@
 
 ## RNA-seq differential expression workshop, July 2022
 
-This workshop will be delivered on July 18, 20, & 22 (12-5pm each day) by the Data Analytics Core (DAC) of the [Center for Quantitative Biology at Dartmouth](https://sites.dartmouth.edu/cqb/).
+This workshop will be delivered on June 12-16 (12-5pm each day) by the Genomic Data Sciences Core (GDSC) of the [Center for Quantitative Biology at Dartmouth](https://sites.dartmouth.edu/cqb/).
 
-The DAC aims to facilitate advanced bioinformatic, computational, and statistical analysis of complex genomics data for the Dartmouth research community.
+The GDSC aims to facilitate advanced bioinformatic, computational, and statistical analysis of complex genomics data for the Dartmouth research community.
 
-If you have questions about this workshop, or would like to discuss data analysis services available from the Data Analytics Core, please visit our [website](https://sites.dartmouth.edu/cqb/projects-and-cores/data-analytics-core/), or email us at: DataAnalyticsCore@groups.dartmouth.edu
+If you have questions about this workshop, or would like to discuss data analysis services available from the Genomic data sciences core, please visit our [website](https://sites.dartmouth.edu/cqb/projects-and-cores/data-analytics-core/), or email us at: DataAnalyticsCore@groups.dartmouth.edu
 
 <img src="figures/logo.jpg" width="250" height="140" >
 
@@ -21,6 +21,6 @@ If you have questions about this workshop, or would like to discuss data analysi
 
 ### Workshop Contacts:
 - Shannon Soucy (Shannon.Soucy@Dartmouth.edu)
-- Noelle Kosarek (Noelle.Kosarek@Dartmouth.edu)
+- Noelle Kosarek (Noelle.N.Kosarek.GR@Dartmouth.edu)
 - Tim Sullivan (Timothy.J.Sullivan@dartmouth.edu)
 - Owen Wilkins (omw@Dartmouth.edu)
