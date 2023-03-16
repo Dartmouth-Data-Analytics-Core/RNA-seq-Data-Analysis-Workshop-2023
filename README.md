@@ -10,12 +10,17 @@ If you have questions about this workshop, or would like to discuss data analysi
 <img src="figures/logo.jpg" width="250" height="140" >
 
 ### Workshop goals:
+- Develop a working understanding of the analytical workflow for a modern bulk RNA-seq experiment
+- Build a working knowledge of sample preparation considerations for RNA-seq experiments
+- Learn how to process raw NGS data in FASTQ format to generate a gene expression matrix
+- Learn how to perform a detailed quality control analysis
 - Understand the basic principles of a differential expression analysis using RNA-seq data
 - Develop a working understanding of the fundamental statistics behind a typical differential expression analysis using R/Bioconductor packages
 - Perform a differential expression analysis using R/Bioconductor packages
 - Learn how to explore the results and make robust insights from your data
 
 ### Workshop Contacts:
-- Shannon Soucy (Shannon.Margaret.Soucy@Dartmouth.edu)
+- Shannon Soucy (Shannon.Soucy@Dartmouth.edu)
+- Noelle Kosarek (Noelle.Kosarek@Dartmouth.edu)
 - Tim Sullivan (Timothy.J.Sullivan@dartmouth.edu)
 - Owen Wilkins (omw@Dartmouth.edu)
