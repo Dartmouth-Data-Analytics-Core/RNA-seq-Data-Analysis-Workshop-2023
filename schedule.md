@@ -24,7 +24,7 @@ We have designed the schedule so that breaks are essentially built into the brea
 - **12:45-2:00 - Read mapping**
 - **2:15-3:15 - Alignment QC**
 - **3:30-4:10 - Read Quantification** 
-- **4:25-4:35 - Putting it all together**
+- **4:10-5:00 - Additional downstream analyses**
 
 ---
 
@@ -42,6 +42,6 @@ We have designed the schedule so that breaks are essentially built into the brea
 - **12:00-12:30 - Linear modeling(lecture)**
 - **12:30-1:30 - Differential expression analysis with DESeq2**
 - **1:45-2:45 - Results annotation & visualization**
-- **3:00-4:00 - Additional downstream analyses**
-- **4:15-4:30 - Putting it all together**
+- **3:00-3:30 - Putting it all together**
+- **3:30-4:30 - Additional downstream analysis**
 - **4:30-4:45 - Wrap-up & closing remarks**
