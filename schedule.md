@@ -31,15 +31,15 @@ We have designed the schedule so that breaks are essentially built into the brea
 # Day 3
 
 - **12:00-12:45 - Introduction to R**
-- **12:45-1:45 - RNAseq for Differential expression (lecture)**
-- **1:45-2:30 - Data management & Normalization**
-- **2:30-3:30 - Exploratory data analysis**
-- **3:30-4:30 - Basic statistical inference (lecture)**
+- **12:45-1:30 - Data management & Normalization**
+- **1:45-2:45 - Exploratory data analysis**
+- **3:00-4:00 - Basic statistical inference**
+- **4:15-4:45 - Linear modeling**
 ---
 
 # Day 4
 
-- **12:00-12:30 - Linear modeling(lecture)**
+- **12:00-12:30 - Lingering questions (Q&A)**
 - **12:30-1:30 - Differential expression analysis with DESeq2**
 - **1:45-2:45 - Results annotation & visualization**
 - **3:00-3:30 - Putting it all together**
