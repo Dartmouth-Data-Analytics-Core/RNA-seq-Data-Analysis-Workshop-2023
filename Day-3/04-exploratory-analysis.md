@@ -10,7 +10,7 @@ value# 01 - Exploratory data analysis
 Load the DESeq2 dataset:
 ```r
 # set working directory (YOU MAY NEED TO CHANGE THIS PATH)
-setwd('~/Documents/GitHub/RNA-seq-Differential-Expression-workshop-June-2022/')
+setwd('~/Documents/GitHub/RNA-seq-Data-Analysis-Workshop-2023/')
 
 # read in the RDS object
 dds <- readRDS("DESeq2.rdata")
