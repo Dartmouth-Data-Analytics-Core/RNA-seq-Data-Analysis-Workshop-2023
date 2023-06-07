@@ -59,7 +59,7 @@ In R, the basic syntax for a basic linear model is: `lm(response ~ predictor)`. 
 
 ```r
 # read in the example data
-dat <- read.csv("data/lm-example-data.csv", stringsAsFactors=FALSE)
+dat <- read.csv("data-part2/lm-example-data.csv", stringsAsFactors=FALSE)
 
 # explore it quickly
 head(dat)
@@ -146,7 +146,7 @@ If the *P*-value does not pass the *a priori* significance threshold for your an
 You can always confirm by looking at the slope in a simple linear model. To demonstrate this, explore the example below for Gene Y and its relation to Hba1c levels.
 ```r
 # read in the example data
-dat2 <- read.csv("data/lm-example-data-geneY.csv", stringsAsFactors=FALSE)
+dat2 <- read.csv("data-part2/lm-example-data-geneY.csv", stringsAsFactors=FALSE)
 
 # plot
 plot(dat2$gene_exp ~ dat2$hba1c,
@@ -245,7 +245,7 @@ As we have discussed, RNA-seq is measured in terms of read counts, whose values 
 Plot the distribution of normalized read counts from a single sample:
 ```r
 #reload DESeq2 dds object if not saved from previous lesson
-#dds <- readRDS("data/DESeq2.rds")
+#dds <- readRDS("DESeq2.rds")
 
 hist(counts(dds, normalized=FALSE)[,5],
      breaks = 500, col="blue",
