@@ -175,7 +175,7 @@ Navigate to the [RStudio website](https://rstudio.com/) and download the appropr
 
 ## Install required R-packages
 
-Beyond the basic functionality included in R's standard distribution, an enormous number of packages designed to extend R's functionality for specific applications an exist, representing one of R's core strengths.
+Beyond the basic functionality included in R's standard distribution, an enormous number of packages designed to extend R's functionality for specific applications exists, representing one of R's core strengths.
 
 Most R-packages are obtained from one of two package repositories:
 - [CRAN (The Comprehensive R Network)](https://cran.r-project.org/)
