@@ -91,7 +91,7 @@ against each other.
 
 ```r
 # set plotting window to 1 row vs 2 columns
-par(mfrow=c(1,2))
+par(mfrow=c(2,1))
 
 # plot standard log counts
 cts <- counts(dds, normalized=FALSE)
