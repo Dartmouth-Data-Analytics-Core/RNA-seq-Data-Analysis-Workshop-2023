@@ -82,7 +82,7 @@ cd /dartfs-hpc/scratch/
 
 # go into it
 # remember to use your own initials - this is Owen's directory
-cd omw/rnaseq_workshp2
+cd omw/rnaseq_workshp
 
 # set an alias so we can get here quickly
 alias rnaw='cd /dartfs-hpc/scratch/omw/rnaseq_workshp'
