@@ -6,7 +6,7 @@
 
 ### A complete workflow
 
-The entire DESeq2 workflow essentially boils down to just a few functions run sequentially. In this lesson we will review them to consolidate our knowledge oh how to perform a complete DE analysis with DESeq2. 
+The entire DESeq2 workflow essentially boils down to just a few functions run sequentially. In this lesson we will review them to consolidate our knowledge oh how to perform a complete DE analysis with DESeq2.
 
 ```r
 #Putting it all together
@@ -15,7 +15,8 @@ The entire DESeq2 workflow essentially boils down to just a few functions run se
 library(DESeq2)
 
 #Set directory, file names, and contrasts
-WORKING_DIRECTORY = "C:/Users/Tim Sullivan/Downloads/RNA-seq-Differential-Expression-workshop-June-2021-master/data"
+##NOTE: You will need to direct this to the path on your machine, not Tim's. 
+WORKING_DIRECTORY = "C:/Users/Tim Sullivan/Downloads/RNA-seq-RNA-seq-Data-Analysis-Workshop-2023/data-part2"
 setwd(WORKING_DIRECTORY)
 COUNTS_FILE = "all_counts.txt"
 METADATA_FILE = "sample_metadata.csv"
