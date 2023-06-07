@@ -45,11 +45,11 @@ Normalized data are also available from the [Gene Expression Omnibus (GEO)](http
 
 ## Install the Integrative Genomics Viewer (IGV)
 
-We will be using the [Integrative Genomics Viewer (IGV)](http://software.broadinstitute.org/software/igv/), a genome browser produced by researchers at the Broad Institute, to explore and visualize RNA-seq data.
+We will be using the [Integrative Genomics Viewer (IGV)](https://software.broadinstitute.org/software/igv/), a genome browser produced by researchers at the Broad Institute, to explore and visualize RNA-seq data.
 
 <img src="figures/igv.png" height="100" width="100"/>
 
-You will need to download and install the IGV desktop application for your operating system before the workshop begins. The latest versions of IGV can be found at their [downloads page](http://software.broadinstitute.org/software/igv/download). After installing IGV, try opening the application on your computer to confirm the installation was successful.
+You will need to download and install the IGV desktop application for your operating system before the workshop begins. The latest versions of IGV can be found at their [downloads page](https://software.broadinstitute.org/software/igv/download). After installing IGV, try opening the application on your computer to confirm the installation was successful.
 
 ---
 ## Installing an SFTP client ##
