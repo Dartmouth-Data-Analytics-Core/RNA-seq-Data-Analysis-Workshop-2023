@@ -32,7 +32,7 @@ We can download the annotation file for our species of interest in a flat file f
 Download the file yourself and add it to the `data/` directory, or use the one we have provided for you.
 ```r
 # read in the annotation file
-anno <- read.delim("data/GRCh38.p12_ensembl-97.txt", stringsAsFactors = T, header = T)
+anno <- read.delim("data-part2/GRCh38.p12_ensembl-97.txt", stringsAsFactors = T, header = T)
 
 # have a look at the first few rows
 head(anno)
