@@ -13,14 +13,14 @@ Importantly, the Shell allows us to do each of these in the context of Bioinform
 ## Why learn to use a Shell?  
 Learning to use a Shell can be challenging, however it is a key skill in bioinformatics, as it is the primary way in which we interface with a lot of bioinformatics software and file types.
 
-Some bioinformatics software provides GUIs that enable users execute tasks with programs that you would otherwise execute using the Shell. While such software can be powerful in the right context, they can also make it very easy to perform tasks in bioinformatics incorrectly, and should therefore should treated with caution.
+Some bioinformatics software provides GUIs that enable users to execute tasks with programs that you would otherwise execute using the Shell. While such software can be powerful in the right context, they can also make it very easy to perform tasks in bioinformatics incorrectly, and should therefore be treated with caution.
 
 
 ## The Bash shell
 
 ### The absolute basics
 
-There are different types of Unix shells, however the most popular is Bash (the *Bourne Again Shell*), which is also the most common on Linux systems. Since the majority of participants will be using the Bash shell, and this is the default shell used on Dartmouth's high performance computing system (which we will be using), this lesson will be introduce the Shell through using the Bash shell, however most, if not all, content should be transferable to other Unix shells.
+There are different types of Unix shells, however the most popular is Bash (the *Bourne Again Shell*), which is also the most common on Linux systems. Since the majority of participants will be using the Bash shell, and this is the default shell used on Dartmouth's high performance computing system (which we will be using), this lesson will introduce the Shell through using the Bash shell, however most, if not all, content should be transferable to other Unix shells.
 
 > Use the Cheat Sheet in the GitHub repo to help you learn commands and available options.
 
@@ -134,7 +134,7 @@ mkdir -p omw/rnaseq_workshp/
 # replace omw with your initials
 cd omw/rnaseq_workshp/
 
-# Set an alias so we can get here quickly 
+# Set an alias so we can get here quickly
 # replace omw with your initials
 alias biow='cd /dartfs-hpc/scratch/omw/rnaseq_workshp'
 # NOTE: you can add this line to your .bashrc so it get run every time you log in, we will cover this below
@@ -277,7 +277,7 @@ X* | 0 or more repetitions of X
 X+ | 1 or more repetitions of X
 X? | 0 or 1 instances of X
 
-Now let's use some of these regular expressions in a `grep` command  to see their utility. Let's use regular expressions to see how many genes have zero reads counted for the first four samples. The flag `-P` indicates that we will be using perl-style regular expressions in the pattern we are searching for, you can use `grep --h` to learn more about available flags for the `grep` command. 
+Now let's use some of these regular expressions in a `grep` command  to see their utility. Let's use regular expressions to see how many genes have zero reads counted for the first four samples. The flag `-P` indicates that we will be using perl-style regular expressions in the pattern we are searching for, you can use `grep --h` to learn more about available flags for the `grep` command.
 
 ```bash
 # Count the number of genes with no reads in the first four samples
@@ -305,4 +305,4 @@ This should change the word at the beginning of your prompt from `(base)` to the
 
 ### Breakout room activities
 
-- Check out the Bash/Unix cheat sheet links in the GitHub directory, and try out a few other commands on the `all_counts.txt` file. Use the `man` command to learn more about these commands and how they should be used. 
+- Check out the Bash/Unix cheat sheet links in the GitHub directory, and try out a few other commands on the `all_counts.txt` file. Use the `man` command to learn more about these commands and how they should be used.
