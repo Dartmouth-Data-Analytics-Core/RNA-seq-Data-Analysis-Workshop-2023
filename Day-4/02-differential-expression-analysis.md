@@ -16,7 +16,7 @@ library(DESeq2)
 Load the DESeq2 dataset we already generated:
 ```r
 # set working directory (YOU MAY NEED TO CHANGE THIS PATH)
-setwd('~/Documents/GitHub/RNA-seq-Differential-Expression-workshop-June-2021/')
+setwd('~/Documents/GitHub/RNA-seq-Data-Analysis-Workshop-2023/')
 
 # load DESeq dataset
 dds <- readRDS("DESeq2.rds")
