@@ -9,15 +9,15 @@
 
 ### Downloading the workshop repository
 
-We will be running most of the analysis for the workshop on your local machines. To have access to the relevant datasets and other workshop materials, we need to download (or clone) the repository (repo) from [GitHub](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Differential-Expression-workshop-June-2022).
+We will be running most of the analysis for the workshop on your local machines. To have access to the relevant datasets and other workshop materials, we need to download (or clone) the repository (repo) from [GitHub](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Data-Analysis-Workshop-2023).
 
 If you are comfortable using the Terminal or a Terminal emulator on your computer, you can copy and paste the code below to clone the repository onto your device.
 
 ```bash
-git clone https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Differential-Expression-workshop-June-2022
+git clone https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Data-Analysis-Workshop-2023
 ```
 
-Alternatively, you can directly download the repository by going directly to the [workshop GitHub repo](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Differential-Expression-workshop-June-2022) from the dropdown menu and selecting `Download ZIP` as shown in the figure below.
+Alternatively, you can directly download the repository by going directly to the [workshop GitHub repo](git clone https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Data-Analysis-Workshop-2023) from the dropdown menu and selecting `Download ZIP` as shown in the figure below.
 
 
 <p align="center">
@@ -38,7 +38,7 @@ tutorials](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/
 DESeq2 is a well organized package that applies robust algorithms to perform several aspects of RNA-seq data analysis. If you plan to use DESeq2 for your work, you should read both the tutorials made available on their Bioconductor page, and the original manuscript for DESeq2, in
 [Love *et al*, 2014](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8) to develop an understanding of the theory behind DESeq2 and the processes implemented by the package.
 
-> Despite DESeq2’s extensive functionality, it may not be the best choice for all experimental designs, for example, analysis of time course experiments, or other hierarchical/clustered study designs. If you are in any doubt about which tool to use, consult an expert. 
+> Despite DESeq2’s extensive functionality, it may not be the best choice for all experimental designs, for example, analysis of time course experiments, or other hierarchical/clustered study designs. If you are in any doubt about which tool to use, consult an expert.
 
 The figure below provides an outline of the major steps in a standard DE analysis with DESeq2, and highlights key functions used at each step.
 
@@ -54,7 +54,7 @@ Set your working directory to the location of the workshop folder on your local 
 
 ```r
 ##### NOTE: YOU MAY NEED TO EDIT THE BELOW PATH
-setwd('~/Documents/GitHub/RNA-seq-Differential-Expression-workshop-June-2022/')
+setwd('~/Documents/GitHub/RNA-seq-Data-Analysis-Workshop-2023/')
 ```
 
 ------------------------------------------------------------------------
@@ -76,7 +76,7 @@ Now we can read in our data. How you read your data into DESeq2 depends on what 
 
 ```r
 # read in the matrix we generated using htseq-count
-cts <- as.matrix(read.table("data/all_counts.txt",
+cts <- as.matrix(read.table("data-part2/all_counts.txt",
                             sep="\t",
                             header = TRUE,
                             row.names=1,
@@ -112,7 +112,7 @@ labels, and sequencing run information, etc.
 
 ```r
 # read in the file from the SRA metadata that has sample/experimental labels
-colData <- read.csv("data/sample_metadata.csv", row.names=1)
+colData <- read.csv("data-part2/sample_metadata.csv", row.names=1)
 head(colData)
 
 # order by SRA run accession
