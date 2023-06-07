@@ -109,7 +109,7 @@ What if we want to count how many unique barcodes exist in the FASTQ file. To do
 
 To print all the sequence lines (2nd line) of each FASTQ entry, we can use a command called ***sed***, short for ***stream editor*** which allows you to streamline edits to text that are redirected to the command. You can find a tutorial on using **sed** [here](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux).
 
-`sed`'s' `'p'` argument tells the program we want the output to be printed, and the `-n` option to tell sed we want to suppress automatic printing (so we don't get the results printed 2x). Piping this to `head` we can get the first line of the first 10 options in the FASTQ file (the header line). We specify `'1-4p'` as we want sed tp *print 1 line, then skip forward 4*.
+`sed`'s' `'p'` argument tells the program we want the output to be printed, and the `-n` option to tell sed we want to suppress automatic printing (so we don't get the results printed 2x). Piping this to `head` we can get the first line of the first 10 options in the FASTQ file (the header line). We specify `'1-4p'` as we want sed to *print 1 line, then skip forward 4*.
 ```bash
 zcat SRR1039508_1.chr20.fastq.gz | sed -n '1~4p' | head -10
 ```
@@ -142,15 +142,15 @@ Loops allow us repeat operations over a defined variable or set of files. Essent
 Notice that the variable ***i*** set in the conditions for our loop is used to reference all the elements to be looped over in the operation using the term ***$i*** in this **for*** loop example:
 ```bash
 # loop over numbers 1:10, printing them as we go
-for i in {1..10}; do 
-   echo "$i"; 
+for i in {1..10}; do
+   echo "$i";
 done
 ```
 
 
 Alternatively, if you do not know how many times you might need to run a loop, using a ***while*** loop may be useful, as it will continue the loop until the boolean (logical) specified in the first line evaluates to `false`. An example would be looping over all of the files in your directory to perform a specific task. e.g.
 ```bash
-ls *.fastq.gz | while read x; do 
+ls *.fastq.gz | while read x; do
  # tell me what the shell is doing
  echo $x is being processed...
  # provide an empty line for ease of viewing
@@ -164,7 +164,7 @@ ls *.fastq.gz | while read x; do
 
 Perhaps we wanted to check how many reads contain the start codon `ATG`. We can do this by searching for matches and counting how many times it was found, and repeating this process for each sample using a for loop.
 ```bash
-ls *.fastq.gz | while read x; do 
+ls *.fastq.gz | while read x; do
    echo $x
    zcat $x | sed -n '2~4p' | head -4 | grep -o "ATG" | wc -l
 done
@@ -172,7 +172,7 @@ done
 
 We could use one of these loops to perform the nucleotide counting task that we performed on a single sample above.
 ```bash
-ls *.fastq.gz | while read x; do 
+ls *.fastq.gz | while read x; do
    echo ''  
    echo processing sample $x
    zcat $x | sed -n '2~4p' | sed -n '1,10000p' | grep -o . | sort | grep 'C\|G' | uniq -c ;
@@ -345,11 +345,11 @@ Since the polyA and adapter sequence contamination is relatively low for this da
 # go to parent directory using alias (or absolute/relative path)
 rnaw
 
-# make directory for results and move into it 
+# make directory for results and move into it
 mkdir ../../results/trim
 cd ../../results/trim
 
-# run cutadapt 
+# run cutadapt
 cutadapt \
    -o SRR1039508_1.trim.chr20.fastq.gz \
    -p SRR1039508_2.trim.chr20.fastq.gz \
