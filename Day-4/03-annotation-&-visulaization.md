@@ -198,7 +198,7 @@ p = ggplot(res_tmp, aes(log2FoldChange, -log10(pvalue))) +
     xlim(-5, 11) +
     geom_hline(yintercept = -log10(alpha), color = "black", linetype = "dashed", size = 0.4) +
     theme(legend.key = element_blank()) +
-    ggtitle("Control vs Dex")
+    ggtitle("Control vs Dex") +
   # add vertical fold change lines
   geom_vline(xintercept = fc_cutoff, colour = "black", linetype="dotted") +
   geom_vline(xintercept = -fc_cutoff, colour = "black", linetype="dotted")
