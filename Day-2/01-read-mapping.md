@@ -12,6 +12,9 @@ Log onto discovery, activate the conda environment, and make a new directory to 
 # log on to discovery
 ssh NETID@discovery.dartmouth.edu
 
+# log onto the specified node 
+srun -p preempt1 --account=DAC --cpus-per-task=1 --pty /bin/bash --mem=8000
+
 # activate conda environment
 conda activate /dartfs-hpc/scratch/rnaseq1/envs/rnaseq1
 
