@@ -346,8 +346,8 @@ Since the polyA and adapter sequence contamination is relatively low for this da
 rnaw
 
 # make directory for results and move into it
-mkdir ../../results/trim
-cd ../../results/trim
+mkdir results/trim
+cd results/trim
 
 # run cutadapt
 cutadapt \
