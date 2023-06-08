@@ -28,11 +28,11 @@ library(circlize)
 
 ### Introduction
 
-Before running a differential expression analysis, it is good practice to explore the relationships between samples based on their gene global gene expression profiles. This analysis allows perform several quality control checks such as confirming that replicates cluster together, or the dataset is free from batch effects. Furthermore, these analysis allow us to build expectations for our DE analysis.
+Before running a differential expression analysis, it is good practice to explore the relationships between samples based on their global gene expression profiles. This analysis allows us to perform several quality control checks such as confirming that replicates cluster together, or the dataset is free from batch effects. Furthermore, these analyses allow us to build expectations for our DE analysis.
 
 
 
-To perform these analysis, we generally make use of **unsupervised statistical analysis methods**. These methods make no prior assumptions about relationships between samples, and aim to reveal clusters and groups that form naturally in our data.
+To perform these analyses, we generally make use of **unsupervised statistical analysis methods**. These methods make no prior assumptions about relationships between samples, and aim to reveal clusters and groups that form naturally in our data.
 
 Such methods are often referred to as **dimension reduction methods** since they generate a simplified representation of the original dataset. We will discuss two of these methods that can be used for RNA-seq data:
 - Principal components analysis (PCA)
@@ -55,7 +55,7 @@ By using the projection values of each sample along the PCs, we can visualize th
 	title="" width="90%" height="90%" />
 </p>
 
-StatQuest has an excellent [video](https://www.youtube.com/watch?v=_UVHneBUBW0) that explains the fundamental concepts of PCA, and provides more details how to the PCs themselves are calculated.
+StatQuest has an excellent [video](https://www.youtube.com/watch?v=_UVHneBUBW0) that explains the fundamental concepts of PCA, and provides more details about how PCs themselves are calculated.
 
 #### Performing PCA on RNA-seq data
 
@@ -277,7 +277,7 @@ A comprehensive introduction of how to correct for a batch effect is beyond the 
 
 Deciding on which approach to take is a complicated issue, and is largely dependent on the extent of the batch effect. If the batch effect is very large, it may be too difficult to effectively remove it statistically, or regress out variation attributable to it in the DE analysis.
 
-Ultimately, the easiest way to handle a batch effect if to prevent it from ever occurring. Whwere possible, practice your protocol and confirm you can get consistent replicates before committing to the full experiment.
+Ultimately, the easiest way to handle a batch effect is to prevent it from ever occurring. Where possible, practice your protocol and confirm you can get consistent replicates before committing to the full experiment.
 
 **Take home message on batch effects:** If your experiment includes
 multiple batches, check them in your unsupervised
@@ -301,7 +301,7 @@ analyses to check for a batch effect.
 
 Hierarchical clustering is complimentary to approaches like PCA, and is used to assess relationships between samples and features (e.g. genes) in a dataset. Visualizing these relationships provides insight into which samples are most similar/dissimilar, as well as identify genes that changes in similar ways across a dataset.
 
-Both supervised and unsupervised clustering methods exist, however unsupervised methods are generally used when we have no prior expectation for groups (clusters) thats should exist in the data. To generate clusters, a **distance metric** is calculated, where smaller values represent more similar samples, which are grouped together into clusters. A **dendrogram** is used to represent the relationships between samples, as determined during the clustering process. The results are commonly visualized using a heatmap.
+Both supervised and unsupervised clustering methods exist, however unsupervised methods are generally used when we have no prior expectation for groups (clusters) that should exist in the data. To generate clusters, a **distance metric** is calculated, where smaller values represent more similar samples, which are grouped together into clusters. A **dendrogram** is used to represent the relationships between samples, as determined during the clustering process. The results are commonly visualized using a heatmap.
 
 <p align="center">
 <img src="../figures/heatmaps.png" alt="glength"
