@@ -176,7 +176,7 @@ This will take a few minutes.. read what is being printed to the screen to get a
 
 ## Make the QC report with MultiQC
 
-Viewing each of the outputs from the aligner, `CollectRNASeqMetrics`, `MarkDuplicates`, etc. would obvbiously be very tedious, so we need some way of aggregating all of these data into one place so that we can compare across the whole dataset. Like we did earlier, we can use `MultiQC` to synthesize a QC report, as it recognizes output from `CollectRNASeqMetrics` and `MarkDuplicates`.
+Viewing each of the outputs from the aligner, `CollectRNASeqMetrics`, `MarkDuplicates`, etc. would obviously be very tedious, so we need some way of aggregating all of these data into one place so that we can compare across the whole dataset. Like we did earlier, we can use `MultiQC` to synthesize a QC report, as it recognizes output from `CollectRNASeqMetrics` and `MarkDuplicates`.
 
 ```bash
 # move STAR final.out files over to /alignment.qc
@@ -202,7 +202,7 @@ scp d41294d@discovery7.dartmouth.edu:/dartfs-hpc/scratch/rnaseq1/data/qc/alignme
 ```
 
 
-Open this report and have a look at it, but also open the report for post-alignment QC in the GitHub repo you download, located in `Bulk-RNA-seq_workshop_Part-1_June-2021/QC-reports/`. The report we generated is only for samples mapped to chr20, so the QC metrics will look a little spotty and are less representative of what you would see in a standard experiment. The QC report in the GitHub repo has been generated using **all samples with reads mapping to all chromosomes**. We will have a look through this together now.
+Open this report and have a look at it, but also open the report for post-alignment QC in the GitHub repo you download, located in `RNA-seq-Data-Analysis-Workshop-2023/QC-reports/`. The report we generated is only for samples mapped to chr20, so the QC metrics will look a little spotty and are less representative of what you would see in a standard experiment. The QC report in the GitHub repo has been generated using **all samples with reads mapping to all chromosomes**. We will have a look through this together now.
 
 ### You report should look like this:
 
