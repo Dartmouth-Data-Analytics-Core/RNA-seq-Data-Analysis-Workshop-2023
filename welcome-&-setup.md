@@ -102,16 +102,10 @@ cd ~
 mkdir -p .conda/pkgs/cache .conda/envs
 ```
 
-Now create the conda environment that we will be using for the workshop. This takes about 15 minutes to complete. As you will see, many packages are being installed or updated, all managed for you by conda.
+When you are ready activate the conda environment for the workshop, use the following command:
 
 ```bash
-conda env create -f /dartfs-hpc/scratch/rnaseq1/environment.yml
-```
-
-When you are ready activate the conda environment, use the following command:
-
-```bash
-conda activate rnaseq1
+conda activate /dartfs-hpc/scratch/rnaseq1/envs/rnaseq1
 ```
 
 You will see that the activate command has worked when it reads `rnaseq1` rather than `base` to the left of the prompt.
