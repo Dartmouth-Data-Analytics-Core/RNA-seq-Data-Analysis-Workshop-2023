@@ -75,12 +75,12 @@ htseq-count \
 	-s no \
 	-r pos \
 	--additional-attr "gene_name" \
-	../alignment/SRR1039508.Aligned.sortedByCoord.out.chr20.bam \
-	/dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.gtf > SRR1039508.htseq-counts
+	../alignment/SRR1039508.Aligned.sortedByCoord.out.bam \
+	/dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.chr20.gtf > SRR1039508.htseq-counts
 
 
 # same command as above but without the newlines to separate the flags - only run one of these
-htseq-count -f bam -s no -r pos --additional-attr "gene_name" ../alignment/SRR1039508.Aligned.sortedByCoord.out.chr20.bam /dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.gtf > SRR1039508.htseq-counts
+htseq-count -f bam -s no -r pos --additional-attr "gene_name" ../alignment/SRR1039508.Aligned.sortedByCoord.out.bam /dartfs-hpc/scratch/rnaseq1/refs/Homo_sapiens.GRCh38.97.chr20.gtf > SRR1039508.htseq-counts
 
 ```
 
@@ -205,7 +205,7 @@ In practice, you would have generated the `.htseq.counts` files using all genes 
 
 Have a quick look at it:
 ```bash
-head /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts.txt
+head /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt
 
 # how many lines
 cat /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt | wc -l
@@ -251,8 +251,19 @@ Previously we used STAR to generate a genome mapping, therefore to use RSEM to q
 
 Complete and run the code below to generate transcript quantification estimates using RSEM on one sample from our dataset. The majority of the code has been provided for you, however you should look at the documentation from STAR and RSEM to better understand the options used.
 
-In addition, RSEM has not been included in your original conda environment (intentionally), so you must install it before completing the example below. Go to [the conda page for RSEM](https://anaconda.org/bioconda/rsem) to obtain the code needed to add RSEM to your conda environment. Note that this command may take a few minutes to run.
+In addition, RSEM has not been included in your original conda environment (intentionally), so you must create a new environment and install it before completing the example below. To create a new empty conda environment called `rsem` use the command:
 
+```bash
+# exit current conda environment 
+conda deactivate
+
+# create empty conda environment
+conda env create -n rsem
+
+# activate new empty environment
+conda activate rsem
+```
+Now go to [the conda page for RSEM](https://anaconda.org/bioconda/rsem) to obtain the code needed to add RSEM to your conda environment. Note that this command may take a few minutes to run.
 
 ```bash
 # set your current working directory to your own results/alignment directory
