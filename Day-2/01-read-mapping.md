@@ -7,8 +7,14 @@
 - Perform an alignment with `STAR`
 - How to view alignments using the `Integrative Genomics Viewer (IGV)`
 
-Make a new directory to work in:
+Log onto discovery, activate the conda environment, and make a new directory to work in:
 ```bash
+# log on to discovery
+ssh NETID@discovery.dartmouth.edu
+
+# activate conda environment
+conda activate /dartfs-hpc/scratch/rnaseq1/envs/rnaseq1
+
 # go to our home dir for the workshop
 rnaw
 
