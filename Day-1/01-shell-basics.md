@@ -295,7 +295,7 @@ We will do this now by loading a new environment with the tool `conda`. We have 
 
 ```bash
 # Load conda environment
-conda activate rnaseq1
+conda activate /dartfs-hpc/scratch/rnaseq1/envs/rnaseq1
 # Check your PATH compared to before activating, note the additional binaries folder
 echo $PATH| tr ":" "\n"
 ```
