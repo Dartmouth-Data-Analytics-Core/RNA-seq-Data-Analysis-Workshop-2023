@@ -20,11 +20,11 @@ We have designed the schedule so that breaks are essentially built into the brea
 
 # Day 2
 
-- **12:00-12:45 - Introduction to RNAseq (lecture)**
+- **12:00-12:45 - Introduction to RNA-seq (lecture)**
 - **12:45-2:00 - Read mapping**
 - **2:15-3:15 - Alignment QC**
 - **3:30-4:10 - Read Quantification** 
-- **4:10-5:00 - Additional downstream analyses**
+- **4:10-5:00 - Unqiue applications of RNA-seq (Lecture)**
 
 ---
 
@@ -39,7 +39,7 @@ We have designed the schedule so that breaks are essentially built into the brea
 
 # Day 4
 
-- **12:00-12:30 - Lingering questions (Q&A)**
+- **12:00-12:30 - Q&A**
 - **12:30-1:30 - Differential expression analysis with DESeq2**
 - **1:45-2:45 - Results annotation & visualization**
 - **3:00-3:30 - Putting it all together**
