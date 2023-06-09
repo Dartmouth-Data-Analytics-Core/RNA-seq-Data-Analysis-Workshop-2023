@@ -304,7 +304,7 @@ rsem-calculate-expression --paired-end \
                           --alignments \
                           --strandedness none \
                           -p 1 \
-                          SRR1039508.Aligned.toTranscriptome.out.bam \
+                          ../alignment/SRR1039508.Aligned.toTranscriptome.out.bam \
                           /dartfs-hpc/scratch/rnaseq1/refs/hg38_chr20_index_RSEM/ref \
                           SRR1039508
 ```
