@@ -10,7 +10,7 @@ Lets login to discovery7 and start and interactive session before we get started
 ssh d41294d@discovery7.dartmouth.edu
 
 # log onto the node we reserved
-srun -p preempt1 --account=DAC --cpus-per-task=1 --pty /bin/bash --mem=8000
+srun --nodes=1 --ntasks-per-node=1 --mem-per-cpu=8GB --cpus-per-task=1  --time=12:00:00 --account=dac --partition=preempt1 --pty /bin/bash
 ```
 
 ## Dataset for the workshop
