@@ -12,8 +12,8 @@ We have designed the schedule so that breaks are essentially built into the brea
 
 - **12:00-12:30 - Welcome & introduction (lecture)**
 - **12:30-1:00 - Introduction to Shell**
-- **1:15-2:15 - Introduction to NGS data generation (lecture)**
-- **2:15-2:50 - Data management & setup**
+- **1:15-1:50 - Data management & setup**
+- **2:00-3:00 - Introduction to NGS data generation (lecture)**
 - **3:00-4:30 - FastQ files and Basic QC**
 
 ---
