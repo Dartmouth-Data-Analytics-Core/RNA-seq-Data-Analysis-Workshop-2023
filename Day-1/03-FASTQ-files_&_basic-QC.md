@@ -12,7 +12,7 @@ cp /dartfs-hpc/scratch/rnaseq1/data/trimmed-fastq/* results/trim/
 
 ## FASTQ file format
 
-FASTQ files are arguably the workhorse format of bioinformatics. FASTQs are used to store sequence reads generated in next-generation sequencing (NGS) experiments. Similarly to FASTA files, FASTQ files contain a herder line, followed by the sequence read, however individual quality of base calls from the sequencer are included for each record in a FASTQ file.
+FASTQ files are arguably the workhorse format of bioinformatics. FASTQs are used to store sequence reads generated in next-generation sequencing (NGS) experiments. Similarly to FASTA files, FASTQ files contain a header line, followed by the sequence read, however individual quality of base calls from the sequencer are included for each record in a FASTQ file.
 
 Here is what a the first record of an example FASTQ file looks like
 ```
@@ -87,7 +87,7 @@ It is critical that the R1 and R2 files have **the same number of records in bot
 
 While you don't normally need to go looking within an individual FASTQ file, it is useful to be able to manipulate FASTQ files if you are going to be doing lots of bioinformatics.
 
-Due to their large size, we often perform `gzip` compression of FASTQ file. However this means we have to unzip them if we want to look inside them and perform operations on them. We can do this with the `zcat` command and a pipe (|).
+Due to their large size, we often perform `gzip` compression of FASTQ file. However, this means we have to unzip them if we want to look inside them and perform operations on them. We can do this with the `zcat` command and a pipe (|).
 
 Remember, the pipe command is a way of linking commands, the pipe sends the output from the first command to the second command. `zcat` lists the contents of a zipped file to your screen, and head limits the output to the first ten lines.
 
@@ -148,7 +148,7 @@ done
 ```
 
 
-Alternatively, if you do not know how many times you might need to run a loop, using a ***while*** loop may be useful, as it will continue the loop until the boolean (logical) specified in the first line evaluates to `false`. An example would be looping over all of the files in your directory to perform a specific task. e.g.
+Alternatively, if you do not know how many times you might need to run a loop, using a ***while*** loop may be useful, as it will continue the loop until the Boolean (logical) specified in the first line evaluates to `false`. An example would be looping over all of the files in your directory to perform a specific task. e.g.
 ```bash
 ls *.fastq.gz | while read x; do
  # tell me what the shell is doing
@@ -274,7 +274,7 @@ cd fastqc_results
 ls -lah
 ```
 
-**Note**: FastQC does not use the entire dataset, just the first few thousand reads in the FASTQ file, therefore there could be some bias introduced by this, although we assume there isn't since entires are placed into FASTQ files randomly.
+**Note**: FastQC does not use the entire dataset, just the first few thousand reads in the FASTQ file, therefore there could be some bias introduced by this, although we assume there isn't since entries are placed into FASTQ files randomly.
 
 Opening and evaluating an individual `.html` file for each FASTQ file is obviously going to be tedious and slow. Luckily, someone built a tool to speed this up. [MultiQC](https://multiqc.info/)
 
@@ -285,7 +285,7 @@ Lets run MultiQC on our FastQC files:
 multiqc .
 ```
 
-Copy to report to your LOCAL MACHINE in a new folder and open in a web-broswer:
+Copy to report to your LOCAL MACHINE in a new folder and open in a web-browser:
 ```bash
 # make a directory and go into it (ON YOUR LOCAL MACHINE)
 mkdir rnaseq_wrksp/
@@ -338,7 +338,7 @@ If we wanted to trim polyA sequences and save the output to a report called cuta
 ```bash
 cutadapt -a 'A{76}' -o out.trimmed.fastq.gz input.fastq.gz > cutadapt.logout;
 ```
-`-a A{76}` tells cutadapt to search for streches of A bases at the end of reads, with a maximum length of the read length (76bp).
+`-a A{76}` tells cutadapt to search for stretches of A bases at the end of reads, with a maximum length of the read length (76bp).
 
 Since the polyA and adapter sequence contamination is relatively low for this dataset, we won't trim any specific sequences, although we will perform basic quality and length processing of the raw reads. Lets make a new directory and do this for do this for one sample.
 ```bash
@@ -400,4 +400,4 @@ done
 
 **Additional note:** For data generated at Dartmouth, since much of the data in the Genomics core is generated using an **Illumina NextSeq**, we also often use the `--nextseq-trim` option in cutadapt.
 
-This option works in a similar way to the quality threshold option `-q` BUT ignores Q-scores for stretches of G bases, as some Illumina instruments, such as the NextSeq, generate strings of Gs when when the sequencer 'falls off' the end of a fragment and dark cycles occur, and therefore provides more appropriate quality trimming for data generated on these instruments.
+This option works in a similar way to the quality threshold option `-q` BUT ignores Q-scores for stretches of G bases, as some Illumina instruments, such as the NextSeq, generate strings of Gs when the sequencer 'falls off' the end of a fragment and dark cycles occur, and therefore provides more appropriate quality trimming for data generated on these instruments.
