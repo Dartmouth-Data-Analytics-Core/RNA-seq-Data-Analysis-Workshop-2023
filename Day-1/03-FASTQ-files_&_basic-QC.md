@@ -91,6 +91,14 @@ Due to their large size, we often perform `gzip` compression of FASTQ file. Howe
 
 Remember, the pipe command is a way of linking commands, the pipe sends the output from the first command to the second command. `zcat` lists the contents of a zipped file to your screen, and head limits the output to the first ten lines.
 
+If not already there, establish a connection to Discovery and a job on the DAC node:
+```bash
+ssh netID@discovery.dartmouth.edu
+srun --nodes=1 --ntasks-per-node=1 --mem-per-cpu=8GB --cpus-per-task=1  --time=12:00:00 --account=dac --partition=preempt1 --pty /bin/bash
+#change 'sullivan' to your own initials or directory path
+cd /dartfs-hpc/scratch/sullivan/rnaseq_workshop
+```
+
 Lets use `zcat` and `head` to have a look at the first few records in our FASTQ file.
 ```bash
 # navigate to the raw_data directory created in the previous lesson
