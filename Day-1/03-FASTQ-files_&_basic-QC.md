@@ -93,6 +93,8 @@ Remember, the pipe command is a way of linking commands, the pipe sends the outp
 
 Lets use `zcat` and `head` to have a look at the first few records in our FASTQ file.
 ```bash
+# navigate to the raw_data directory created in the previous lesson
+cd raw_data
 # unzip and view first few lines of FASTQ file
 zcat SRR1039508_1.chr20.fastq.gz | head
 zcat SRR1039508_2.chr20.fastq.gz | head
@@ -105,11 +107,11 @@ zcat SRR1039508_2.chr20.fastq.gz | wc -l
 ```
 Paired-end reads should have the same number of records!
 
-What if we want to count how many unique barcodes exist in the FASTQ file. To do this, we would need to print all the sequence lines of each FASTQ entry, then search those for the barcode by specifying a regular expression.
+What if we want to count how many adapter sequences exist in the FASTQ file. To do this, we would need to print all the sequence lines of each FASTQ entry, then search those for the sequence by specifying a regular expression.
 
 To print all the sequence lines (2nd line) of each FASTQ entry, we can use a command called ***sed***, short for ***stream editor*** which allows you to streamline edits to text that are redirected to the command. You can find a tutorial on using **sed** [here](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux).
 
-`sed`'s' `'p'` argument tells the program we want the output to be printed, and the `-n` option to tell sed we want to suppress automatic printing (so we don't get the results printed 2x). Piping this to `head` we can get the first line of the first 10 options in the FASTQ file (the header line). We specify `'1-4p'` as we want sed to *print 1 line, then skip forward 4*.
+`sed`'s' `'p'` argument tells the program we want the output to be printed, and the `-n` option to tell sed we want to suppress automatic printing (so we don't get the results printed 2x). Piping this to `head` we can get the first line of the first 10 records in the FASTQ file (the header line). We specify `'1-4p'` as we want sed to *print 1 line, then skip forward 4*.
 ```bash
 zcat SRR1039508_1.chr20.fastq.gz | sed -n '1~4p' | head -10
 ```
@@ -265,6 +267,9 @@ Lets run FASTQC on our data and move the results to a new directory.
 # specify the -t option for multi threading to make it run faster, here we are using one because our files are small
 fastqc -t 1 *.fastq.gz
 
+## note -- if fastqc is not available, activate the conda environment for this workshop
+## conda activate /dartfs-hpc/scratch/rnaseq1/envs/rnaseq1
+
 # move results to a new folder
 mkdir fastqc_results
 mv *fastqc* fastqc_results
@@ -367,7 +372,7 @@ Cutadapt will identify full matches to the sequences you provide, as well as par
 
 Now lets run this on all of our samples:
 ```bash
-ls ../../raw_data/*.chr20.fastq.gz | while read x; do \
+ls ../../raw_data/*_1.chr20.fastq.gz | while read x; do \
 
    # save the file name
    sample=`echo "$x"`
