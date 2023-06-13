@@ -18,7 +18,7 @@ cd results/alignment.qc
 If you get lost, or do not have enough time to finish the commands before we move to the next session you can copy the files needed for the next step with the following command from the scratch directory you have created for yourself.
 
 ```bash
-cp /dartfs-hpc/scratch/rnaseq1/data/qc/alignment/* results/alignment.qc/
+cp /dartfs-hpc/scratch/rnaseq1/data/qc/* results/alignment.qc/
 ```
 
 ## Principles of post-alignment QC
