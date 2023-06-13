@@ -12,7 +12,7 @@ cp /dartfs-hpc/scratch/rnaseq1/data/trimmed-fastq/* results/trim/
 
 ## FASTQ file format
 
-FASTQ files are arguably the workhorse format of bioinformatics. FASTQs are used to store sequence reads generated in next-generation sequencing (NGS) experiments. Similarly to FASTA files, FASTQ files contain a herder line, followed by the sequence read, however individual quality of base calls from the sequencer are included for each record in a FASTQ file.
+FASTQ files are arguably the workhorse format of bioinformatics. FASTQs are used to store sequence reads generated in next-generation sequencing (NGS) experiments. Similarly to FASTA files, FASTQ files contain a header line, followed by the sequence read, however individual quality of base calls from the sequencer are included for each record in a FASTQ file.
 
 Here is what a the first record of an example FASTQ file looks like
 ```
@@ -87,12 +87,22 @@ It is critical that the R1 and R2 files have **the same number of records in bot
 
 While you don't normally need to go looking within an individual FASTQ file, it is useful to be able to manipulate FASTQ files if you are going to be doing lots of bioinformatics.
 
-Due to their large size, we often perform `gzip` compression of FASTQ file. However this means we have to unzip them if we want to look inside them and perform operations on them. We can do this with the `zcat` command and a pipe (|).
+Due to their large size, we often perform `gzip` compression of FASTQ file. However, this means we have to unzip them if we want to look inside them and perform operations on them. We can do this with the `zcat` command and a pipe (|).
 
 Remember, the pipe command is a way of linking commands, the pipe sends the output from the first command to the second command. `zcat` lists the contents of a zipped file to your screen, and head limits the output to the first ten lines.
 
+If not already there, establish a connection to Discovery and a job on the DAC node:
+```bash
+ssh netID@discovery.dartmouth.edu
+srun --nodes=1 --ntasks-per-node=1 --mem-per-cpu=8GB --cpus-per-task=1  --time=12:00:00 --account=dac --partition=preempt1 --pty /bin/bash
+#change 'sullivan' to your own initials or directory path
+cd /dartfs-hpc/scratch/sullivan/rnaseq_workshp
+```
+
 Lets use `zcat` and `head` to have a look at the first few records in our FASTQ file.
 ```bash
+# navigate to the raw_data directory created in the previous lesson
+cd raw_data
 # unzip and view first few lines of FASTQ file
 zcat SRR1039508_1.chr20.fastq.gz | head
 zcat SRR1039508_2.chr20.fastq.gz | head
@@ -105,11 +115,11 @@ zcat SRR1039508_2.chr20.fastq.gz | wc -l
 ```
 Paired-end reads should have the same number of records!
 
-What if we want to count how many unique barcodes exist in the FASTQ file. To do this, we would need to print all the sequence lines of each FASTQ entry, then search those for the barcode by specifying a regular expression.
+What if we want to count how many adapter sequences exist in the FASTQ file. To do this, we would need to print all the sequence lines of each FASTQ entry, then search those for the sequence by specifying a regular expression.
 
 To print all the sequence lines (2nd line) of each FASTQ entry, we can use a command called ***sed***, short for ***stream editor*** which allows you to streamline edits to text that are redirected to the command. You can find a tutorial on using **sed** [here](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux).
 
-`sed`'s' `'p'` argument tells the program we want the output to be printed, and the `-n` option to tell sed we want to suppress automatic printing (so we don't get the results printed 2x). Piping this to `head` we can get the first line of the first 10 options in the FASTQ file (the header line). We specify `'1-4p'` as we want sed to *print 1 line, then skip forward 4*.
+`sed`'s' `'p'` argument tells the program we want the output to be printed, and the `-n` option to tell sed we want to suppress automatic printing (so we don't get the results printed 2x). Piping this to `head` we can get the first line of the first 10 records in the FASTQ file (the header line). We specify `'1-4p'` as we want sed to *print 1 line, then skip forward 4*.
 ```bash
 zcat SRR1039508_1.chr20.fastq.gz | sed -n '1~4p' | head -10
 ```
@@ -148,7 +158,7 @@ done
 ```
 
 
-Alternatively, if you do not know how many times you might need to run a loop, using a ***while*** loop may be useful, as it will continue the loop until the boolean (logical) specified in the first line evaluates to `false`. An example would be looping over all of the files in your directory to perform a specific task. e.g.
+Alternatively, if you do not know how many times you might need to run a loop, using a ***while*** loop may be useful, as it will continue the loop until the Boolean (logical) specified in the first line evaluates to `false`. An example would be looping over all of the files in your directory to perform a specific task. e.g.
 ```bash
 ls *.fastq.gz | while read x; do
  # tell me what the shell is doing
@@ -265,6 +275,9 @@ Lets run FASTQC on our data and move the results to a new directory.
 # specify the -t option for multi threading to make it run faster, here we are using one because our files are small
 fastqc -t 1 *.fastq.gz
 
+## note -- if fastqc is not available, activate the conda environment for this workshop
+## conda activate /dartfs-hpc/scratch/rnaseq1/envs/rnaseq1
+
 # move results to a new folder
 mkdir fastqc_results
 mv *fastqc* fastqc_results
@@ -274,7 +287,7 @@ cd fastqc_results
 ls -lah
 ```
 
-**Note**: FastQC does not use the entire dataset, just the first few thousand reads in the FASTQ file, therefore there could be some bias introduced by this, although we assume there isn't since entires are placed into FASTQ files randomly.
+**Note**: FastQC does not use the entire dataset, just the first few thousand reads in the FASTQ file, therefore there could be some bias introduced by this, although we assume there isn't since entries are placed into FASTQ files randomly.
 
 Opening and evaluating an individual `.html` file for each FASTQ file is obviously going to be tedious and slow. Luckily, someone built a tool to speed this up. [MultiQC](https://multiqc.info/)
 
@@ -285,7 +298,7 @@ Lets run MultiQC on our FastQC files:
 multiqc .
 ```
 
-Copy to report to your LOCAL MACHINE in a new folder and open in a web-broswer:
+Copy to report to your LOCAL MACHINE in a new folder and open in a web-browser:
 ```bash
 # make a directory and go into it (ON YOUR LOCAL MACHINE)
 mkdir rnaseq_wrksp/
@@ -338,7 +351,7 @@ If we wanted to trim polyA sequences and save the output to a report called cuta
 ```bash
 cutadapt -a 'A{76}' -o out.trimmed.fastq.gz input.fastq.gz > cutadapt.logout;
 ```
-`-a A{76}` tells cutadapt to search for streches of A bases at the end of reads, with a maximum length of the read length (76bp).
+`-a A{76}` tells cutadapt to search for stretches of A bases at the end of reads, with a maximum length of the read length (76bp).
 
 Since the polyA and adapter sequence contamination is relatively low for this dataset, we won't trim any specific sequences, although we will perform basic quality and length processing of the raw reads. Lets make a new directory and do this for do this for one sample.
 ```bash
@@ -367,7 +380,7 @@ Cutadapt will identify full matches to the sequences you provide, as well as par
 
 Now lets run this on all of our samples:
 ```bash
-ls ../../raw_data/*.chr20.fastq.gz | while read x; do \
+ls ../../raw_data/*_1.chr20.fastq.gz | while read x; do \
 
    # save the file name
    sample=`echo "$x"`
@@ -400,4 +413,4 @@ done
 
 **Additional note:** For data generated at Dartmouth, since much of the data in the Genomics core is generated using an **Illumina NextSeq**, we also often use the `--nextseq-trim` option in cutadapt.
 
-This option works in a similar way to the quality threshold option `-q` BUT ignores Q-scores for stretches of G bases, as some Illumina instruments, such as the NextSeq, generate strings of Gs when when the sequencer 'falls off' the end of a fragment and dark cycles occur, and therefore provides more appropriate quality trimming for data generated on these instruments.
+This option works in a similar way to the quality threshold option `-q` BUT ignores Q-scores for stretches of G bases, as some Illumina instruments, such as the NextSeq, generate strings of Gs when the sequencer 'falls off' the end of a fragment and dark cycles occur, and therefore provides more appropriate quality trimming for data generated on these instruments.

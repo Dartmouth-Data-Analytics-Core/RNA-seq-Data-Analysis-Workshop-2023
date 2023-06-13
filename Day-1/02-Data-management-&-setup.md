@@ -4,7 +4,7 @@
 - Familiarize yourself with the data set, directories, and set up your own working directory
 - Understand the importance of good data management for RNA-seq analysis
 
-Lets login to discovery7 and start and interactive session before we get started.  
+Let's login to discovery7 and start and interactive session before we get started.  
 ```bash
 # open a secure connection.
 ssh d41294d@discovery7.dartmouth.edu
@@ -17,9 +17,7 @@ srun --nodes=1 --ntasks-per-node=1 --mem-per-cpu=8GB --cpus-per-task=1  --time=1
 
 We will be using the RNA-seq dataset described in [Himes *et al*, 2014, *PloS One*](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0099625). This study investigates the mechanism by which glucocorticoids, a major treatment used in asthma care, prevent inflammation of airway smooth muscle cells (ASM).
 
-The authors sequenced 4 primary human ASM cell lines that were treated with a control vehicle (untreated), dexamethasone (Dex), albuterol (Alb), or both dexamethasone and albuterol (co-treated) for 18 hours before sample collection (although only Dex samples are considered in the paper). They then use differential expression analysis to identify >300 differentially expressed genes (DEGs).
-
-Although we won't be performing a differential expression analysis of these data in the workshop, it is still useful top understand the overall study design, depicted below:
+The authors sequenced 4 primary human ASM cell lines that were treated with a control vehicle (untreated), dexamethasone (Dex), albuterol (Alb), or both dexamethasone and albuterol (co-treated) for 18 hours before sample collection (although only Dex samples are considered in the paper). They then use differential expression analysis to identify >300 differentially expressed genes (DEGs). An overall study design is depicted below:
 
 ![](../figures/experiment.png)
 
@@ -142,5 +140,5 @@ We are now ready to start working with the data and processing the raw FASTQ fil
 Although not required since the workshop materials will remain available on the [GitHub repository](https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2021), you may download the workshop materials to your local computer. In your terminal window, navigate to where you want to download the files on your local machine. Then execute the following command:
 
 ```bash
-git clone https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Primary-Data-Analysis-workshop-June-2022/
+git clone https://github.com/Dartmouth-Data-Analytics-Core/RNA-seq-Data-Analysis-Workshop-2023/
 ```
