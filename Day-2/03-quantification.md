@@ -131,59 +131,29 @@ The final step in the pre-processing of RNA-seq data for differential expression
 
 ![](../figures/ge-matrix.png)
 
-Loop over `htseq-count` output files and extract the read count column
+Build a header for our combined `htseq-count` file.
 ```bash
-# set up an array that we will fill with shorthand sample names
-myarray=()
-
-# loop over htseq.counts files and extract 2nd column (the raw read counts) using 'cut' command
-while read x;  do
-  # split up sample names to remove everything after "-"
-  sname=`echo "$x"`
-  sname=`echo "$sname" | cut -d"-" -f1`
-  # extract second column of file to get read counts only
-  echo counts for "$sname" being extracted
-  cut -f3 $x > "$sname".tmp.counts
-  # save shorthand sample names into an array  
-  sname2="$sname"
-  myarray+=($sname2)
-done < <(ls -1 *.htseq-counts | sort)
+#echo column names and extract sample ids from htseq-counts files
+echo ENSEMBL_ID gene_name *.htseq-counts| sed s/".htseq-counts"//g| sed s/" "/"\t"/g > all_counts.txt
 ```
 
-Paste all gene IDs into a file with each to make the gene expression matrix
+Append the count data from each htseq-counts file's third column.
 ```bash
-# extract ENSG gene IDs and gene names from one of the files
-cut -f1-2 SRR1039508.htseq-counts > genes.txt
+#calculate the number of files from which to extract counts data
+numfiles=`ls *htseq-counts | wc -l`
 
-# use the paste command to put geneIDs and raw counts for all files in 1 file
-paste genes.txt *.tmp.counts > tmp_all_counts.txt
+#paste all files together, print 1st, 2nd, then every 3rd column. 
+#append to previous header with >>
+paste *htseq-counts | cut  -f `eval echo 1 2 {3..$((3*numfiles))..3}| sed s/" "/","/g` >> all_counts.txt
 
-# check it looks good
-head tmp_all_counts.txt
+##try these commands to understand how the above command is composed
+## paste *htseq-counts | head
+## echo `eval echo 1 2 {3..$((3*numfiles))..3}`
+## echo `eval echo 1 2 {3..$((3*numfiles))..3} | sed s/" "/","/g`
 ```
 
-Save sample names in the array into text file
+Let's see how our combined file looks
 ```bash
-# look at the contents of the array we made with shorthand sample names
-echo ${myarray[@]}
-
-# print contents of array into text file with each element on a new line
-printf "%s\n" "${myarray[@]}" > col_names.txt
-cat col_names.txt
-
-# add 'gene_name' to colnames
-cat <(echo "ENSEMBL_ID") <(echo "gene_name") col_names.txt > col_names_full.txt
-cat col_names_full.txt
-```
-
-Put sample names in the file with counts to form row headers and complete the gene expression matrix
-```bash
-# make a file to fill
-touch all_counts.txt
-
-# use the 'cat' command (concatenate) to put all tmp.counts.txt files into all_counts.txt
-cat <(cat col_names_full.txt | sort | paste -s) tmp_all_counts.txt > all_counts.txt
-
 # view head of file
 head all_counts.txt
 tail all_counts.txt
@@ -196,10 +166,6 @@ head -n-5 all_counts.txt > all_counts_f.txt
 wc -l all_counts_f.txt
 ```
 
-Remove all the tmp files
-```bash
-rm -f *tmp*
-```
 
 In practice, you would have generated the `.htseq.counts` files using all genes across the entire genome, and using all of the samples in the dataset, instead of the four samples we used in these examples. So that we have the complete set of counts available for day 2, we have made a complete raw counts matrix for you to use. You can find this in `/dartfs-hpc/scratch/rnaseq1/data/htseq-counts/`. It is also in the GitHub repository that you downloaded in the `Day-2` folder, as we will be loading it into `R` tomorrow for the differential expression analysis.
 
