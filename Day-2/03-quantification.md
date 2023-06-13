@@ -167,7 +167,7 @@ wc -l all_counts_f.txt
 ```
 
 
-In practice, you would have generated the `.htseq.counts` files using all genes across the entire genome, and using all of the samples in the dataset, instead of the four samples we used in these examples. So that we have the complete set of counts available for day 2, we have made a complete raw counts matrix for you to use. You can find this in `/dartfs-hpc/scratch/rnaseq1/data/htseq-counts/`. It is also in the GitHub repository that you downloaded in the `Day-2` folder, as we will be loading it into `R` tomorrow for the differential expression analysis.
+In practice, we would have generated the `.htseq.counts` files using all genes across the entire genome, and using all of the samples in the dataset, instead of the four samples and 20th chromosome we used in these examples. So that we have the complete set of counts available for days 4 and 5, we have made a complete raw counts matrix for you to use. You can find this in `/dartfs-hpc/scratch/rnaseq1/data/htseq-count/`. It is also in the GitHub repository, as we will be loading it into `R` for the differential expression analysis portion of the workshop.
 
 Have a quick look at it:
 ```bash
@@ -175,13 +175,8 @@ head /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt
 
 # how many lines
 cat /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt | wc -l
-
-# add it to our quant directory
-cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/all_counts_full.txt all_counts_full.txt
-
-# also copy the below file as we will need it in the next lesson
-cp /dartfs-hpc/scratch/rnaseq1/data/htseq-count/gene-lengths-grch38.tsv gene-lengths-grch38.tsv
 ```
+
 
 ### Quantification of transcript abundance
 
