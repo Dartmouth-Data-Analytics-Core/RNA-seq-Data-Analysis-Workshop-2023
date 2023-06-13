@@ -96,7 +96,7 @@ If not already there, establish a connection to Discovery and a job on the DAC n
 ssh netID@discovery.dartmouth.edu
 srun --nodes=1 --ntasks-per-node=1 --mem-per-cpu=8GB --cpus-per-task=1  --time=12:00:00 --account=dac --partition=preempt1 --pty /bin/bash
 #change 'sullivan' to your own initials or directory path
-cd /dartfs-hpc/scratch/sullivan/rnaseq_workshop
+cd /dartfs-hpc/scratch/sullivan/rnaseq_workshp
 ```
 
 Lets use `zcat` and `head` to have a look at the first few records in our FASTQ file.
