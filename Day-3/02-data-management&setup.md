@@ -69,10 +69,6 @@ In this workshop we will use [*DESeq2*](https://bioconductor.org/packages/releas
 
 > **NOTE:** DESeq2 may not be approriate for all experimental designs, for example, in study designs where multiple samples are collected from the same individual. Such study designs are referred to as containing *hierarchical* or *clustered* data. You can read more about this type of study design in [Moen *et al*, 2016, PloS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0146721). If you are in any doubt about which tool to use, consult an expert.
 
-------------------------------
-
-### Importing count data into R  
-
 The figure below provides an outline of the major steps in a standard DE analysis with DESeq2, and highlights key functions used at each step.
 
 ![](../figures/overview.png)
