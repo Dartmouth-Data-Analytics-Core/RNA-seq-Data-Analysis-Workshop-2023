@@ -2,8 +2,28 @@
 ------------------------------
 
 ### Learning objectives:
+- Understand the basic concepts behind a differential expression analysis 
 - Understand the experimental design for dataset we will be using
 - Learn how to read raw count data from an RNA-seq experiment into R
+
+----------
+
+### What is a differential expression analysis? 
+
+Often the goal of a project using RNA-seq is to identify genes whose expression varies across samples with an experimental condition of interest. We refer to these genes as *differentially expressed* and can offer insight into the biological processes affected by the experimental condition. 
+
+To perform a differential expression analysis, we perform a separate statistical test for each gene detected in our dataset. The statistical test models the read count distribution across samples in each experimental group, and allows us to test if the mean expression level of the gene in each experimental group is significantly different. 
+
+<p align="center">
+<img src="../figures/diff-exp-concept.png" alt="overview"
+	title="" width="100%" height="25%" />
+</p>
+
+> Image adapted from: https://hbctraining.github.io/DGE_workshop/lessons/04
+
+If there are additional varaibles that could confound expression estimates across the experimental groups (e.g. age and sex) we need to include these variables in our staistical modeling. 
+
+During days 3 & 4 of this workshop we will discuss how to perform a robust differential expression (DE) analysis, and introduce you to a range of key statistical concepts that anyone running a DE analysis should understand. 
 
 ----------
 
