@@ -1,4 +1,4 @@
-value# 01 - Exploratory data analysis
+# 01 - Exploratory data analysis
 
 ### Learning objectives:
 - Understand the principal of dimension reduction for exploratory data analysis
