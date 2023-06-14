@@ -48,17 +48,30 @@ Alternatively, you can directly download the repository by going directly to the
 
 ------------------------------
 
+### Software for Differential Expression analysis 
+
+Several tools exist for conducting DE analysis of bulk RNA-seq data, including:
+- [*EdgeR*](https://www.bioconductor.org/packages/release/bioc/html/edgeR.html)
+- [*limma-voom*](http://bioconductor.org/packages/release/bioc/html/limma.html)
+- [*DESeq2*](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
+
+The most commonly used tools for DE analysis are implemented in the statistical programming language *R*, and vary based on their approaches to read count normalization, distributional assumptions, and tests used for DE. The table below, adapted from [Seyednasrollah *et al*, Brief. In Bioinfo. 2013](https://academic.oup.com/bib/article/16/1/59/240754), summarizes the approaches used by several different analysis tools available as R-packages. 
+
+<p align="center">
+<img src="../figures/diff-exp-methods-table.png" alt="overview"
+	title="" width="100%" height="25%" />
+</p>
+
+The unique approaches adopted by each method mean that some perform better than others in certain scenarios, or have functionality that is unique to a specific type of experimental design. For example, nonparametric methods can perform better at very large sample sizes. 
+
+In this workshop we will use [*DESeq2*](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) to perform DE analysis. DESeq2 is a well organized package that is appropriate for many common experimental deisgns and sample sizes. If you plan to use DESeq2 for your work, you should read the tutorials available on their [Bioconductor page](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), and the original manuscript for DESeq2, in
+[Love *et al*, 2014](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8) 
+
+> **NOTE:** DESeq2 may not be approriate for all experimental designs, for example, in study designs where multiple samples are collected from the same individual. Such study designs are referred to as containing *hierarchical* or *clustered* data. You can read more about this type of study design in [Moen *et al*, 2016, PloS One](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0146721). If you are in any doubt about which tool to use, consult an expert.
+
+------------------------------
+
 ### Importing count data into R  
-
-Several R-packages exist that are designed for analysis of bulk RNA-seq data, including [*EdgeR*](https://www.bioconductor.org/packages/release/bioc/html/edgeR.html),[*limma-voom*](http://bioconductor.org/packages/release/bioc/html/limma.html), [*DESeq2*](https://bioconductor.org/packages/release/bioc/html/DESeq2.html). In this workshop, we will use DESeq2 to perform most analysis, including reading in the counts, normalization, and statistical modeling.
-
-> [Detailed
-tutorials](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html) for using DESeq2 can be found on its Bioconductor page.
-
-DESeq2 is a well organized package that applies robust algorithms to perform several aspects of RNA-seq data analysis. If you plan to use DESeq2 for your work, you should read both the tutorials made available on their Bioconductor page, and the original manuscript for DESeq2, in
-[Love *et al*, 2014](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8) to develop an understanding of the theory behind DESeq2 and the processes implemented by the package.
-
-> Despite DESeq2’s extensive functionality, it may not be the best choice for all experimental designs, for example, analysis of time course experiments, or other hierarchical/clustered study designs. If you are in any doubt about which tool to use, consult an expert.
 
 The figure below provides an outline of the major steps in a standard DE analysis with DESeq2, and highlights key functions used at each step.
 
