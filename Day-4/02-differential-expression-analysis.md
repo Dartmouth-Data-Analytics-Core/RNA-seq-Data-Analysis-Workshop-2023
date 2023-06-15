@@ -276,8 +276,8 @@ res <- results(dds,
   name = "tx.group_Dex_vs_untreated",
   alpha = 0.05)
 
-# check dminesions on tables
-dim(head)
+# check dminesions on results table
+dim(res)
 
 # print top of results table
 head(res)
