@@ -76,7 +76,7 @@ As with working on the terminal a good first step is to orient yourself, let's s
 getwd()
 
 # Set working directory to the data folder in the github repository you downloaded - notice that the path needs to be in double quotes
-setwd("your_path/RNA-seq-Differential-Expression-workshop-June-2022-master/data")
+setwd("your_path/RNA-seq-Data-Analysis-Workshop-2023/data-part2")
 ```
 
 ## Basic data structures in R
