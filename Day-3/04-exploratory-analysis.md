@@ -13,7 +13,7 @@ Load the DESeq2 dataset:
 setwd('~/Documents/GitHub/RNA-seq-Data-Analysis-Workshop-2023/')
 
 # read in the RDS object
-dds <- readRDS("DESeq2.rdata")
+dds <- readRDS("DESeq2.rds")
 ```
 
 Load required R-packages:
