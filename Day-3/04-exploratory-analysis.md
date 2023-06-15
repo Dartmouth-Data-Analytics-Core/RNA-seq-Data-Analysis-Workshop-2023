@@ -1,9 +1,9 @@
 # 01 - Exploratory data analysis
 
 ### Learning objectives:
-- Understand the principal of dimension reduction for exploratory data analysis
-- Develop a working understanding of common dimension reduction approaches such as principal components analysis (PCA) and unsupervised hierarchical clustering
-- Learn how to perform dimension reduction in R on RNA-seq data
+- Understand the principal of using unsupervised analysis for exploratory data analysis
+- Develop a working understanding of common unsupervised analysis approaches such as principal components analysis (PCA) and unsupervised hierarchical clustering
+- Learn how to perform unsupervised clustering & dimension reduction in R on RNA-seq data
 
 ### Set-up
 
