@@ -187,7 +187,7 @@ Importantly, linear models are capable of incorporating categorical variables as
 
 ```r
 # read in the example data
-dat3 <- read.csv("data/lm-example-3.csv", stringsAsFactors=FALSE, row.names = 1)
+dat3 <- read.csv("data-part2/lm-example-3.csv", stringsAsFactors=FALSE, row.names = 1)
 
 # quickly explore it
 head(dat3)
@@ -262,7 +262,7 @@ hist(counts(dds, normalized=FALSE)[,5],
 
 We can easily see that the counts do not follow a normal distribution: most genes have very low count values, with relatively few demonstrating higher expression levels.
 
-Based on this observation, the counts cannot be modeled appropriately using a standard linear model. In fact, bulk RNA-seq data generally exhibit a distribution referred to as the *negative-binomial*, therefore we must us a model that assumes this distribution when performing differential expression testing. **We will discuss this in more detail on Friday**.
+Based on this observation, the counts cannot be modeled appropriately using a standard linear model. In fact, bulk RNA-seq data generally exhibit a distribution referred to as the *negative-binomial*, therefore we must us a model that assumes this distribution when performing differential expression testing. **We will discuss this in more detail in later lessons**.
 
 RNA-seq read counts are also referred to as **heteroscedastic**, meaning they have a *non-constant variance* at different values of the mean across samples. We can see this if we plot the variance in read counts across samples against the mean.
 
