@@ -34,13 +34,13 @@ We have designed the schedule so that breaks are essentially built into the brea
 - **12:45-1:30 - Data management & Normalization**
 - **1:45-2:45 - Exploratory data analysis**
 - **3:00-4:00 - Basic statistical inference**
-- **4:15-4:45 - Linear modeling**
 ---
 
 # Day 4
 
-- **12:00-12:30 - Q&A**
-- **12:30-1:30 - Differential expression analysis with DESeq2**
-- **1:45-2:45 - Results annotation & visualization**
-- **3:00-3:34 - Putting it all together**
+- **11:30-1200: - Q&A**
+- **12:00-1:00 - Linear modeling**
+- **1:00-2:15 - Differential expression analysis with DESeq2**
+- **2:15-3:15 - Results annotation & visualization**
+- **3:15-4:00 - Putting it all together**
 - **4:00-4:30 - Wrap-up & closing remarks**
