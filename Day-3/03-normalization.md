@@ -1,4 +1,4 @@
-# Part 4 - Data normalization in RNA-seq
+# Data normalization in RNA-seq
 
 ### Learning objectives:
 - Understand why read counts must be normalized in RNA-seq data
@@ -32,8 +32,6 @@ library(biomaRt)
 To compare expression levels between genes within a sample, or genes across multiple samples, it is critical the data is normalized to allow appropriate interpretation of the results. Which normalization strategy used depends on several factors such as library type, and type of comparison you wish to make (e.g. within- vs between-sample).
 
 Below we will discuss the major sources of variation that need to be accounted for during normalization in order to reach appropriate conclusions about your results. Subsequently, we will discuss the normalization approaches that account for these sources of variation and when to use them.
-
->NOTE: If you attend the *RNA-seq Primary Data Analysis Workshop* this content will be familiar.
 
 ## Sources of variation in RNA-seq data requiring normalization
 
