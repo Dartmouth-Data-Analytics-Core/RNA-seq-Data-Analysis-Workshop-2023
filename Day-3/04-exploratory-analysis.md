@@ -404,7 +404,7 @@ draw(ht1, row_title = "Genes", column_title = "Top 500 most variable genes")
 ```
 
 <p align="center">
-<img src="../figures/unsup-clust-heatmap-2.png" alt="glength"
+<img src="../figures/unsup-clust-heatmap-2x.png" alt="glength"
 	title="" width="90%" height="90%" />
 </p>
 
