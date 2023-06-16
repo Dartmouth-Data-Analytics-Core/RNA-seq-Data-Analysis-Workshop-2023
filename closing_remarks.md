@@ -32,6 +32,7 @@
 - Read the methods sections of published papers that perform differential expression analyses. This will help you to understand how many of the concepts we have discussed are applied and reported in practice
 
 - Read reviews like [this one](https://pubmed.ncbi.nlm.nih.gov/31341269/) from Stark *et al*, 2019, *Nat. Rev. Genetics*, `RNA Sequencing: The Teenage Years`.
+- Practice! [Here](https://github.com/NIGMS/NIGMS-Sandbox) is a link to the NIGMS github sandbox page with many self-guided bioinformatics tutorials. 
 
 - Ask us questions! (Bioinformatics office hours: https://dartmouth.zoom.us/s/96998379866, Friday's at 1-2 pm, password: *bioinfo*)
 
@@ -81,8 +82,8 @@ This workshop will be offered again, in addition to our other bioinformatics wor
 
 ---------
 
-## Bioinformatics office hours & consultations
+## Bioinformatics consultations
 
-Please reach out to us with questions related to content from this workshop, or for analysis consultations. We also host **bioinformatics office hours** on **Fridays 1-2pm** for general questions and inquiries (currently on Zoom: https://dartmouth.zoom.us/s/96998379866, password: *bioinfo*)
+Please reach out to us with questions related to content from this workshop, or for analysis consultations.
 
 ### Now.... Discussion/question time!
