@@ -40,7 +40,7 @@ We have designed the schedule so that breaks are essentially built into the brea
 
 - **11:30-1200: - Q&A**
 - **12:00-1:00 - Linear modeling**
-- **1:00-2:15 - Differential expression analysis with DESeq2**
-- **2:15-3:15 - Results annotation & visualization**
-- **3:15-4:00 - Putting it all together**
-- **4:00-4:30 - Wrap-up & closing remarks**
+- **1:15-2:15 - Differential expression analysis with DESeq2**
+- **2:30-3:30 - Results annotation & visualization**
+- **3:45-4:15 - Putting it all together**
+- **4:15-4:45 - Wrap-up & closing remarks**
