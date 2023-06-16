@@ -80,7 +80,7 @@ res <- results(dds, contrast = c(CONTRAST_NAME, CONTRAST_BASE, CONTRAST_TEST), a
 
 #Pre-shrinkage MA Plot
 png(paste(CONTRAST_TEST, "vs", CONTRAST_BASE, "preshrink_MA.png", sep="_"))
-plotMA(dds)
+plotMA(res, ylim=c(-3,3))
 dev.off()
 
 #Shrinkage
@@ -88,7 +88,7 @@ res_shrink <- lfcShrink(dds,contrast = c(CONTRAST_NAME, CONTRAST_BASE, CONTRAST_
 
 #Post-shrinkage MA Plot
 png(paste(CONTRAST_TEST, "vs", CONTRAST_BASE, "shrunk_MA.png", sep="_"))
-plotMA(res_shrink)
+plotMA(res_shrink, ylim=c(-3,3))
 dev.off()
 
 #Order results
