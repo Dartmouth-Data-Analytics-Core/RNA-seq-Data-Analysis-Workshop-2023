@@ -13,11 +13,7 @@
 ----------
 
 ## DE analysis overview
-<p align="left">
-<img src="../figures/analysis_overview.png" alt="lib-composition"
-	title="" width="40%" height="40%" />
-</p>
-
+![](figures/day1_summary.png)
 
 ![](figures/day2_summary.png)
 
