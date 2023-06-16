@@ -12,7 +12,7 @@
 
 ----------
 
-## :Pre-processing & Quality control
+## Pre-processing & Quality control (Day 1 & 2)
 <p align="left">
 <img src="figures/analysis_overview.png" alt="lib-composition"
 	title="" width="40%" height="40%" />
@@ -26,7 +26,7 @@
 
 ----------
 
-## Final take-aways from the workshop
+## Final take-aways from the workshop (Day 3 & 4)
 - Spend the time to plan, consult, practice, (and money) to generate high quality data sets
 
 - If you are going to do a lot of Bioinformatics, you should get really good at the command-line (Bash), otherwise, pre-processing will be slow & painful
