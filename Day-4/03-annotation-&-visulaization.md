@@ -27,7 +27,7 @@ library(ggrepel)
 
 To make our results interpretable, we need to add annotation data for each gene, e.g. symbol, genome coordinates, etc. Since we used *Ensembl v97* to annotate these data, we need to use the Ensembl v97 annotation data to annotate these results.
 
-We can download the annotation file for our species of interest in a flat file format using the [BioMart on the Ensembl website](http://uswest.ensembl.org/biomart/martview/b0399bb192186dea3aedf87d82a4580c).
+We can download the annotation file for our species of interest in a flat file format using the [BioMart on the Ensembl website](http://useast.ensembl.org/biomart/martview/b97d5390e8a46869fdf21430e034b933).
 
 Download the file yourself and add it to the `data/` directory, or use the one we have provided for you.
 ```r
